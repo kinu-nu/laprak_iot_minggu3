@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "author": "Anonymous maker",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": 0, "left": 0, "attrs": {} },
+    { "type": "wokwi-dht22", "id": "dht1", "top": -124.5, "left": 23.4, "attrs": {} },
+    { "type": "wokwi-lcd1602", "id": "lcd1", "top": -54.17, "left": -320, "attrs": {} }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "dht1:GND", "esp:GND.2", "black", [ "v0", "h48", "v38.4" ] ],
+    [ "dht1:VCC", "esp:3V3", "red", [ "v0", "h-48", "v38.4" ] ],
+    [ "dht1:SDA", "esp:21", "green", [ "v9.6", "h67.3", "v76.8" ] ],
+    [ "lcd1:VSS", "esp:GND.1", "green", [ "v9.6", "h278.4", "v67.2" ] ],
+    [ "lcd1:VDD", "esp:5V", "green", [ "v19.2", "h259.3", "v96" ] ],
+    [ "lcd1:RW", "esp:GND.1", "green", [ "v38.4", "h211.1", "v28.8" ] ],
+    [ "lcd1:RS", "esp:19", "green", [ "v0" ] ],
+    [ "lcd1:D4", "esp:18", "green", [ "v28.8" ] ],
+    [ "lcd1:D5", "esp:17", "green", [ "v0" ] ],
+    [ "lcd1:D6", "esp:16", "green", [ "v0" ] ],
+    [ "esp:15", "lcd1:D7", "green", [ "v-28.8", "h-263.96" ] ],
+    [ "lcd1:E", "esp:23", "green", [ "v28.8", "h182.4", "v28.8", "h182.4", "v-19.2" ] ]
+  ],
+  "dependencies": {}
+}
